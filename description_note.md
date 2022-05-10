@@ -7,4 +7,7 @@
         - GUI
             - https://yooloo.tistory.com/98
 
+### 2022-05-10
+    - nestjs-kafka 튜토리얼
+    
 ## TODO
