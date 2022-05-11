@@ -2,7 +2,7 @@ import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import {
   Consumer,
   ConsumerRunConfig,
-  ConsumerSubscribeTopics,
+  ConsumerSubscribeTopic,
   Kafka,
 } from 'kafkajs';
 
@@ -14,7 +14,7 @@ export class ConsumerService implements OnApplicationShutdown {
 
   consumers: Consumer[] = [];
 
-  async consume(topic: ConsumerSubscribeTopics, config: ConsumerRunConfig) {
+  async consume(topic: ConsumerSubscribeTopic, config: ConsumerRunConfig) {
     const consumer = this.kafka.consumer({ groupId: 'test-group' });
     await consumer.connect();
     await consumer.subscribe(topic);
